@@ -19,6 +19,7 @@ bird_vel = 0
 bird_gravity = 0.7
 bird_jump = -10
 
+
 # Pipe properties
 pipe_width = 100
 pipe_gap = 220
