@@ -1,3 +1,4 @@
+import os
 import pygame
 import sys
 import random
@@ -124,5 +125,16 @@ def check_collision(bird_x, bird_y, bird_z, pipes):
         pygame.display.flip()
 
 
-if __name__ == "__main__":
-    main()
+
+# Game over - display final score and quit Pygame
+pygame.quit()
+print(f"Final Score: {score}")
+
+# Simple restart option using command line
+try:
+    restart = input("Play again? (y/n): ").strip().lower()
+    if restart == 'y':
+        os.execl(sys.executable, sys.executable, *sys.argv)
+except EOFError:
+    pass
+
