@@ -1,3 +1,4 @@
+import os
 import pygame
 import sys
 import random
@@ -114,3 +115,15 @@ while running:
     screen.blit(score_surf, (10, 10))
 
     pygame.display.flip()
+
+# Game over - display final score and quit Pygame
+pygame.quit()
+print(f"Final Score: {score}")
+
+# Simple restart option using command line
+try:
+    restart = input("Play again? (y/n): ").strip().lower()
+    if restart == 'y':
+        os.execl(sys.executable, sys.executable, *sys.argv)
+except EOFError:
+    pass
